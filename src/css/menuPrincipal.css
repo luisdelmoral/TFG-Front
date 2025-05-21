@@ -1,0 +1,10 @@
+.menuPrincipal {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #323639;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
