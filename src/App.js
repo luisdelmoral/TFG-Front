@@ -1,49 +1,28 @@
 import React from 'react';
 import './css/menuPrincipal.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import HomePage from './paginas/HomePage';
+import Articulos from './paginas/Articulos';
+import Contactos from './paginas/Contactos';
+import Marcas from './paginas/Marcas';
+import Proveedores from './paginas/Proveedores';
+import MenuBar from './componentes/MenuBar';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to React</h1>
-      <MenuPrincipal />
-    </div>
-  );
-
-}
-function MenuPrincipal() {
-  return (
-    <ul className='menuPrincipal'>
-      <ListaArticulos />
-      <ListaMarcas />
-      <ListaProveedores />
-      <ListaContactos />
-    </ul>
+     <BrowserRouter>
+      <MenuBar />
+      <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/articulos" element={<Articulos />} />
+          <Route path="/marcas" element={<Marcas />} />
+          <Route path="/proveedores" element={<Proveedores />} />
+          <Route path="/contactos" element={<Contactos />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-function ListaArticulos() {
-  return (
-    <li><a>Artículos</a></li>
-  );
-}
-
-function ListaMarcas() {
-  return (
-    <li><a>Marcas</a></li>
-  );
-}
-
-function ListaProveedores() {
-  return (
-    <li><a>Proveedores</a></li>
-  );
-}
-
-function ListaContactos() {
-  return (
-    <li><a>Contactos</a></li>
-  );
-}
-
 
 export default App;
