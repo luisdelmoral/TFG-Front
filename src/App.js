@@ -1,14 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/menuPrincipal.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MenuBar from './componentes/MenuBar';
+
 import HomePage from './paginas/HomePage';
 import Articulos from './paginas/Articulos';
-import Proveedores from './paginas/Proveedores';
-import Marcas from './paginas/Marcas';
 import Contactos from './paginas/Contactos';
-import AnadirContacto from './paginas/AnadirContactos';
+import Marcas from './paginas/Marcas';
+import Proveedores from './paginas/Proveedores';
+import MenuBar from './componentes/MenuBar';
+import AnadirContacto from './paginas/AnadirContacto'
+
 
 function App() {
   return (
