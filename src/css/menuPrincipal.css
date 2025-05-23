@@ -1,0 +1,27 @@
+.mainMenu {
+    list-style: none;
+    margin-top: 2%; 
+    margin-left: 2%; 
+    padding: 1%;
+    overflow: hidden;
+    background-color: #323639;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
+}
+
+.itemMenu {
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border: #F9FCFF;
+    float: left;
+    text-decoration: none;
+}
+
+.selected {
+    color: orange; 
+background-color: #323639;
+
+}
