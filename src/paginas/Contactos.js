@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import '../css/botonAnadir.css'
 
 function Contactos () {
     const [contactos, setContactos] = useState([]);
@@ -38,10 +39,12 @@ function Contactos () {
 
                         </tr>
                     ))}
+                    <button className='buttonFormulario' type="submit">Añadir contacto</button>
+
                 </table>
                 </>
             )}
-            <NavLink to="/anadirContacto">añadir contacto </NavLink>
+
         </div>
     )
 }

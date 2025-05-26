@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Articulos () {
     const [articulos, setArticulos] = useState([]);
@@ -40,6 +41,7 @@ function Articulos () {
                         </tr>
                     ))}
                 </table>
+                <NavLink to="/anadirArticulo" className='botonAnadir'>añadir artículo</NavLink>
                 </>
             )}
         </div>

@@ -2,6 +2,7 @@ import React, {Component, useState} from 'react';
 import axios from 'axios';
 import Contactos from './Contactos';
 import { render } from '@testing-library/react';
+import '../css/formulario.css'
 
 
 
@@ -24,13 +25,14 @@ function AnadirContacto() {
     }
 
     return(
-        <div>
+        <div className='formulario'>
             <>
             <form onSubmit={submitCredentials}>
-                <input type='text' name='nombre' value={this.contacto.nombre} onChange={this.handleChange}></input>
-                <input type='text' name='apellidos' value={this.contacto.apellidos} onChange={this.handleChange}></input>
-                <input type='text' name='email' value={this.contacto.email} onChange={this.handleChange}></input>
-                <input type='number' name='telefono' value={this.contacto.telefono} onChange={this.handleChange}></input>
+                <input type='text' name='nombre' placeholder='...nombre'></input>
+                <input type='text' name='apellidos' placeholder='...apellidos' ></input>
+                <input type='text' name='email' placeholder='...email'></input>
+                <input type='number' name='telefono' placeholder='...telefono'></input>
+                <button className='buttonFormulario' type="submit">Añadir contacto</button>
             </form>
             </>
             

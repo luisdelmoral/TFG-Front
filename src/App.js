@@ -9,6 +9,9 @@ import Marcas from './paginas/Marcas';
 import Proveedores from './paginas/Proveedores';
 import MenuBar from './componentes/MenuBar';
 import AnadirContacto from './paginas/AnadirContacto'
+import AnadirArticulo from './paginas/AnadirArticulo';
+import AnadirMarca from './paginas/AnadirMarca';
+import AnadirProveedor from './paginas/AnadirProveedor';
 
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
           <Route path="/proveedores" element={<Proveedores />} />
           <Route path="/contactos" element={<Contactos />} />
           <Route path="/anadirContacto" element={<AnadirContacto/>} />
+          <Route path="/anadirArticulo" element={<AnadirArticulo/>} />
+          <Route path="/anadirMarca" element={<AnadirMarca/>} />
+          <Route path="/anadirProveedor" element={<AnadirProveedor/>} />
       </Routes>
     </BrowserRouter>
   );
