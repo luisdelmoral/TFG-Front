@@ -68,8 +68,8 @@ function AnadirProveedor() {
                 <>
                     <form id='formularioProveedores' onSubmit={submitProveedor}>
                         <input type='text' name='nombre' placeholder='...nombre'></input>
-                        <input type='text' name='descripcion' placeholder='...descripcion'></input>
-                        <input type='text' name='direccion' placeholder='...direccion'></input><br></br><br></br>
+                         <input type='text' name='direccion' placeholder='...direccion'></input>
+                        <input type='text' name='descripcion' placeholder='...descripcion'></input><br></br><br></br>
                         <label for="marcas">Elija una marca para el proveedor</label><br></br>
                         <select id="marcas" name='marcaId' form='formularioProveedores'>
                             {marcas.map(marca => {

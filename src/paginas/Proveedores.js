@@ -33,8 +33,8 @@ function Proveedores() {
                     {proveedores.map(proveedor => (
                         <tr key={proveedor.id}>
                             <td>{proveedor.nombre}</td>
-                            <td>{proveedor.descripcion}</td>
                             <td>{proveedor.direccion}</td>
+                            <td>{proveedor.descripcion}</td>
                             
                         </tr>
                     ))}

@@ -5,6 +5,22 @@ function Articulos () {
     const [articulos, setArticulos] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const eliminarArticulo=(event) => {
+    if (window.confirm('¿Está seguro de querer eliminar?')) {
+        setLoading (true);
+    const id = event.currentTarget.getAttribute('data-param');
+
+    fetch('/api/articulo/eliminar?id='+id, { method: 'DELETE' })
+        .then((response) => response.json())
+        .then((json) => {
+            window.location.reload(true);
+        }).finally(() => {
+            setLoading(false);
+        });
+    }
+    
+  }
+
   useEffect(() => {
     setLoading(true);
     fetch("/api/articulo/getAll")
@@ -37,6 +53,8 @@ function Articulos () {
                             <td>{articulo.cantidad}</td>
                             <td>{articulo.descatalogado}</td>
                             <td>{articulo.descripcion}</td>
+                            <td><button data-param={articulo.id} onClick={eliminarArticulo}>Eliminar</button></td>
+                            
 
                         </tr>
                     ))}
