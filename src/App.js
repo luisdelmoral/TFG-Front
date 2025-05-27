@@ -12,6 +12,7 @@ import AnadirContacto from './paginas/AnadirContacto'
 import AnadirArticulo from './paginas/AnadirArticulo';
 import AnadirMarca from './paginas/AnadirMarca';
 import AnadirProveedor from './paginas/AnadirProveedor';
+import EditarArticulo from './paginas/EditarArticulo';
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
           <Route path="/anadirArticulo" element={<AnadirArticulo/>} />
           <Route path="/anadirMarca" element={<AnadirMarca/>} />
           <Route path="/anadirProveedor" element={<AnadirProveedor/>} />
+          <Route path="/editarArticulo" element={<EditarArticulo/>} />
+
       </Routes>
     </BrowserRouter>
   );

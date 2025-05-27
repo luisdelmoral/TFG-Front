@@ -22,7 +22,8 @@ function Marcas() {
             ) : (
                 <>
                     <h1>Marcas</h1>
-                    <table border={1}>
+                    <table className="tabla">
+
                         <tr>
                             <th>Nombre</th>
                             <th>Descripción</th>
@@ -35,7 +36,7 @@ function Marcas() {
                             </tr>
                         ))}
                     </table>
-                    <NavLink to="/anadirMarca" className='botonAnadir'>añadir marca</NavLink>
+                    <NavLink to="/anadirMarca" className='buttonFormulario buttonFixed'>añadir marca</NavLink>
 
                 </>
             )}

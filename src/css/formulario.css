@@ -6,12 +6,33 @@
    
 }
 
-.buttonFormulario{
-    margin: 5%;
-    background-color: beige;
-    border-radius: 10px ;
+.buttonFormulario {
+  background-color: #FFA500; 
+  border-radius: 4px;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  transition-duration: 0.2s all;
 
-    
+}
 
+ .buttonFormulario:hover {
+    background-color: #FF7F00;
+    color: white;
+
+}
+
+.buttonFormulario:active {
+    transform: translateY(2px) translateX(2px);
+}
+
+.buttonFixed {
+    position: fixed;
+    top: 13em; 
+    right: 25em; 
+    z-index: 1000; 
 }
 
