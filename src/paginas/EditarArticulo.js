@@ -19,7 +19,7 @@ function EditarArticulo() {
         let data = {};
         formData.forEach((value, key) => data[key] = value);
 
-        fetch("/api/articulo/anadir", {
+        fetch("/api/articulo/actualizar", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
@@ -28,9 +28,9 @@ function EditarArticulo() {
         }).then((response) => response.json())
             .then((json) => {
                 if (json.error === "") {
-                    alert("artículo insertado");
+                    alert("Artículo actualizado");
                 } else {
-                    alert("error insertando arículo: " + json.error);
+                    alert("Error actualizando arículo: " + json.error);
                 }
             })
             .catch(error => console.error(error));
