@@ -43,10 +43,12 @@ function EditarArticulo() {
         e.preventDefault();
         const formData = new FormData(e.target);
         let data = {};
+        data.id=articulo.id
         formData.forEach((value, key) => data[key] = value);
+        data.descatalogado=descatalogado==="true";
 
         fetch("/api/articulo/actualizar", {
-            method: "post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -56,7 +58,7 @@ function EditarArticulo() {
                 if (json.error === "") {
                     alert("Artículo actualizado");
                 } else {
-                    alert("Error actualizando arículo: " + json.error);
+                    alert("Error actualizando artículo: " + json.error);
                 }
             })
             .catch(error => console.error(error));
@@ -103,7 +105,7 @@ function EditarArticulo() {
                         /><br></br>
 
 
-                        <button className='buttonFormulario' type="submit">Añadir artículo</button>
+                        <button className='buttonFormulario' type="submit">Actualizar artículo</button>
                     </form>
                 </>
             )}
