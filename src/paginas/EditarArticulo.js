@@ -6,32 +6,37 @@ import { useLocation } from 'react-router-dom';
 function EditarArticulo() {
     const location = useLocation();
     const articulo = location.state.data;
-    const [descatalogado, setDescatalogado] = useState("" + articulo.descatalogado);
     const [marcas, setMarcas] = useState([]);
     const [loading, setLoading] = useState(false);
+    
+    const [descatalogado, setDescatalogado] = useState("" + articulo.descatalogado);
     const handleDescatalogadoEditar = (event) => {
         setDescatalogado(event.target.value);
-        articulo.descatalogado = event.target.value
     };
 
+    const [nombre, setNombre] = useState("" + articulo.nombre);
     const handleCambioNombre = (event) => {
-        articulo.nombre = event.target.value
+        setNombre(event.target.nombre)
     };
 
+    const [descripcion, setDescripcion] = useState("" + articulo.descripcion);
     const handleCambioDescripcion = (event) => {
-        articulo.descripcion = event.target.value
+        setDescripcion(event.target.descripcion)
     };
 
+    const [precio, setPrecio] = useState("" + articulo.precio);
     const handleCambioPrecio = (event) => {
-        articulo.precio = event.target.value
+        setPrecio(event.target.precio)
     };
 
+    const [cantidad, setCantidad] = useState("" + articulo.cantidad);
     const handleCambioCantidad = (event) => {
-        articulo.cantidad = event.target.value
+        setCantidad(event.target.cantidad)
     };
 
+    const [marca, setMarca] = useState("" + articulo.marca);
     const handleCambioMarca = (event) => {
-        articulo.marcaId = event.target.value
+        setMarca(event.target.marca)
     };
 
     function submitArticulo(e) {
@@ -65,12 +70,12 @@ function EditarArticulo() {
             ) : (
                 <>
                     <form id='formularioEditarArticulos' onSubmit={submitArticulo}>
-                        <input type='text' name='nombre' placeholder='...nombre' value={articulo.nombre} onChange={handleCambioNombre} />
-                        <input type='number' step='0.01' name='precio' placeholder='...precio' value={articulo.precio} onChange={handleCambioPrecio} />
-                        <input type='number' name='cantidad' placeholder='...cantidad' value={articulo.cantidad} onChange={handleCambioCantidad} />
-                        <input type='text' name='descripcion' placeholder='...descripcion' value={articulo.descripcion} onChange={handleCambioDescripcion} /><br></br><br></br>
+                        <input type='text' name='nombre' placeholder='...nombre' value={nombre} onChange={handleCambioNombre} />
+                        <input type='number' step='0.01' name='precio' placeholder='...precio' value={precio} onChange={handleCambioPrecio} />
+                        <input type='number' name='cantidad' placeholder='...cantidad' value={cantidad} onChange={handleCambioCantidad} />
+                        <input type='text' name='descripcion' placeholder='...descripcion' value={descripcion} onChange={handleCambioDescripcion} /><br></br><br></br>
                         <label for="marcas">Elija una marca para el artículo</label><br></br>
-                        <select id="marcas" name='marcaId' form='formularioEditarArticulos' defaultValue={articulo.marcaId} onChange={handleCambioMarca} >
+                        <select id="marcas" name='marcaId' form='formularioEditarArticulos' defaultValue={marca} onChange={handleCambioMarca} >
                             {marcas.map(marca => {
                                 return <option value={marca.id}>{marca.nombre}</option>
                             })}
