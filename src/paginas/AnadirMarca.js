@@ -24,20 +24,6 @@ function AnadirMarca() {
 
     }, [])
 
-     useEffect(() => {
-        setLoading(true);
-        fetch("/api/contacto/getAll", {
-            method: "get",
-        })
-            .then((response) => response.json())
-            .then((json) => setContactos(json.listaContactos))
-            .catch(error => console.error(error))
-            .finally(() => {
-                setLoading(false);
-            });
-
-    }, [])
-
     function submitMarca(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -77,12 +63,7 @@ function AnadirMarca() {
                             })}
                         </select><br></br>
                         <label for="contactos">Elija un contacto para la marca</label><br></br>
-                        <select id="contactos" name='contactoId' form='formularioMarcas'>
-                            {contactos.map(contacto => {
-                                return <option value={contacto.id}>{contacto.nombre}</option>
-                            })}
-                        </select><br></br><br></br>
-
+                        
                         <button className='buttonFormulario' type="submit">Añadir marca</button>
                     </form>
                 </>

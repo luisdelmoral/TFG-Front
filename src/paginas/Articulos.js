@@ -44,6 +44,7 @@ function Articulos() {
                 setLoading(false);
             });
     }, []);
+    
 
     return (
         <div className="divMainHomePage">

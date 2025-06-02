@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Marcas() {
-    const [marcas, setMarcas] = useState([]);
     const [loading, setLoading] = useState(false);
+
+    const [marcas, setMarcas] = useState([]);
 
     useEffect(() => {
         setLoading(true);
@@ -14,6 +15,8 @@ function Marcas() {
                 setLoading(false);
             });
     }, []);
+
+
 
     return (
         <div className="divMainHomePage">

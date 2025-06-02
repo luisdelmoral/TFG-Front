@@ -76,12 +76,6 @@ function EditarArticulo() {
                         <input type='number' step='0.01' name='precio' placeholder='...precio' value={precio} onChange={handleCambioPrecio} />
                         <input type='number' name='cantidad' placeholder='...cantidad' value={cantidad} onChange={handleCambioCantidad} />
                         <input type='text' name='descripcion' placeholder='...descripcion' value={descripcion} onChange={handleCambioDescripcion} /><br></br><br></br>
-                        <label for="marcas">Elija una marca para el artículo</label><br></br>
-                        <select id="marcas" name='marcaId' form='formularioEditarArticulos' defaultValue={marca} onChange={handleCambioMarca} >
-                            {marcas.map(marca => {
-                                return <option value={marca.id}>{marca.nombre}</option>
-                            })}
-                        </select><br></br><br></br>
                         <label>¿Descatalogado?</label><br></br>
                         <label>
                             NO
